@@ -82,11 +82,24 @@ const questions = [
   },
   // LICENSE
   {
+    type: 'confirm',
+    name: 'confirmLicense',
+    message: 'Would you like to include a license for your application?',
+    default: false,
+  },
+  {
     type: 'list',
     name: 'license',
     message: 'Choose a license for your application',
-    choices: ['MIT', 'Apache', 'GPL', 'BSD'],
-    default: ['MIT']
+    choices: ['MIT', 'GPL', 'BSD'],
+    default: ['MIT'],
+    when: ({confirmLicense}) => {
+      if (confirmLicense) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   // CONTRIBUTING
   {
