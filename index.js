@@ -175,7 +175,10 @@ function init() {
 // Function call to initialize app
 init()
   .then(markdownData => {
-    console.log(markdownData);
+    return generateMarkdown(markdownData);
+  })
+  .then(markdown => {
+    console.log(markdown)
   })
 
 // const testData =

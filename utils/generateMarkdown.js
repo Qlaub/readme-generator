@@ -430,11 +430,81 @@ function renderLicenseSection(license, name) {
   return '';
 }
 
+// If no interest in contributors, return empty string
+function renderContribution(confirmContribution, contributionText) {
+  if (!confirmContribution) return '';
+
+  return `
+  ## How to Contribute
+  ${contributionText}
+  `;
+}
+
+// If no tests included, return empty string
+function renderTests(confirmTest, testText) {
+  if (!confirmTest) return '';
+
+  return `
+  ## Tests
+  ${testText}
+  `;
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  - [Installation](#intallation)
+  - [Usage](#usage)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.instructions}
+
+  ${renderLicenseSection(data.license, data.name)}
+
+  ${renderContribution(data.confirmContributions, data.contributions)}
+
+  ${renderTests(data.confirmTests, data.tests)}
+
+  ## Questions
+  Feel free to email me with any questions at ${data.email} or take a look at my [GitHub](https://github.com/${data.github})
 `;
 }
+// Create function to create usage image if user selected they'd like to include one
+// Need to create a new directory in dist 'assets/images'
+// Move placeholder.png from '../src/placeholder.png' to '../dist/assets/images/placeholder.png'
+// Generate markdown ![Application screenshot](assets/images/placeholder.png)
+
+// TITLE - required
+// DESCRIPTION - required
+// INSTALLATION - required
+// USAGE - required
+// LICENSE
+// CONTRIBUTING
+// TESTS
+// QUESTIONS - required
+
+// {
+//   title: 'asdf',
+//   description: 'asdf',
+//   installation: 'asdf',
+//   instructions: 'asdf',
+//   confirmScreenshot: true,
+//   license: 'MIT',
+//   confirmContributions: true,
+//   contributions: '[Contributor Covenant](https://www.contributor-covenant.org/)',
+//   confirmTests: true,
+//   tests: 'asdf',
+//   github: 'asdf',
+//   email: 'asdf@gmail.com'
+// };
 
 module.exports = generateMarkdown;
