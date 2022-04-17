@@ -495,28 +495,5 @@ function generateMarkdown(data) {
   Feel free to email me with any questions at ${data.email} or take a look at my [GitHub](https://github.com/${data.github})
 `;
 }
-// Create function to create usage image if user selected they'd like to include one
-// Need to create a new directory in dist 'assets/images'
-// Move placeholder.png from '../src/placeholder.png' to '../dist/assets/images/placeholder.png'
-// Generate markdown ![Application screenshot](assets/images/placeholder.png)
-
-// const data = {
-//   name: 'asdf',
-//   title: 'asdf',
-//   description: 'asdf',
-//   installation: 'asdf',
-//   instructions: 'asdf',
-//   confirmScreenshot: true,
-//   license: 'GPL',
-//   confirmContributions: false,
-//   contributions: '[Contributor Covenant](https://www.contributor-covenant.org/)',
-//   confirmTests: true,
-//   tests: 'asdf',
-//   github: 'asdf',
-//   email: 'asdf@gmail.com'
-// };
-
-// console.log(renderTableOfContents(data))
-// console.log(generateMarkdown(data))
 
 module.exports = generateMarkdown;

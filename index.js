@@ -75,12 +75,6 @@ const questions = [
       }
     }
   },
-  {
-    type: 'confirm',
-    name: 'confirmScreenshot',
-    message: 'Would you like to include a screenshot with your README?',
-    default: false
-  },
   // LICENSE
   {
     type: 'confirm',
@@ -206,24 +200,8 @@ init()
     return generateMarkdown(markdownData);
   })
   .then(markdown => {
-    writeToFile(markdown);
+    return writeToFile(markdown);
   })
   .catch(err => {
     console.log(err);
   });
-
-// const testData =
-// {
-//   title: 'asdf',
-//   description: 'asdf',
-//   installation: 'asdf',
-//   instructions: 'asdf',
-//   confirmScreenshot: true,
-//   license: 'MIT',
-//   confirmContributions: true,
-//   contributions: '[Contributor Covenant](https://www.contributor-covenant.org/)',
-//   confirmTests: true,
-//   tests: 'asdf',
-//   github: 'asdf',
-//   email: 'asdf@gmail.com'
-// };
