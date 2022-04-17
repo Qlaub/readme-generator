@@ -428,20 +428,16 @@ function renderLicenseSection(license, name) {
 function renderContribution(confirmContribution, contributionText) {
   if (!confirmContribution) return '';
 
-  return `
-  ## How to Contribute
-  ${contributionText}
-  `;
+  return `## How to Contribute
+  ${contributionText}`;
 }
 
 // If no tests included, return empty string
 function renderTests(confirmTest, testText) {
   if (!confirmTest) return '';
 
-  return `
-  ## Tests
-  ${testText}
-  `;
+  return `## Tests
+  ${testText}`;
 }
 
 // Always returns at least installation, usage, and questions sections
