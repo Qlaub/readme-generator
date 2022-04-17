@@ -49,9 +49,7 @@ function renderLicenseText(license, name) {
   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;
     case 'MIT':
-      return `MIT License
-
-  Copyright (c) ${new Date().getFullYear()}, ${name}
+      return `Copyright (c) ${new Date().getFullYear()}, ${name}
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
