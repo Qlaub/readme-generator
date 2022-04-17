@@ -10,8 +10,6 @@ function renderLicenseLink(license) {
   switch (license) {
     case 'MIT':
       return `[MIT License](https://en.wikipedia.org/wiki/MIT_License)`;
-    case 'Apache':
-      return `[Apache License](https://en.wikipedia.org/wiki/Apache_License)`;
     case 'GPL':
       return `[GPL License](https://en.wikipedia.org/wiki/GNU_General_Public_License)`;
     case 'BSD':
