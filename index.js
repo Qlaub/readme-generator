@@ -4,6 +4,20 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
+  // NAME
+  {
+    type: 'input',
+    name: 'name',
+    message: 'What is your full name?',
+    validate: nameInput => {
+      if (nameInput) {
+        return true;
+      } else {
+        console.log('Please enter your full name');
+        return false;
+      }
+    }
+  },
   // TITLE
   {
     type: 'input',
@@ -166,16 +180,16 @@ init()
 
 // const testData =
 // {
-//   title: 'test project 1',
-//   description: 'Testing the features of my README builder',
-//   installation: 'No steps required',
-//   instructions: 'No',
-//   confirmScreenshot: false,
-//   license: [],
+//   title: 'asdf',
+//   description: 'asdf',
+//   installation: 'asdf',
+//   instructions: 'asdf',
+//   confirmScreenshot: true,
+//   license: 'MIT',
 //   confirmContributions: true,
 //   contributions: '[Contributor Covenant](https://www.contributor-covenant.org/)',
 //   confirmTests: true,
-//   tests: "I don't wanna",
-//   github: 'me',
-//   email: 'mine@gmail.com'
+//   tests: 'asdf',
+//   github: 'asdf',
+//   email: 'asdf@gmail.com'
 // };
